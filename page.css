@@ -1,0 +1,63 @@
+@charset "utf-8";
+/* @reset */
+html{
+	background: #f0f0f0;
+}
+body{
+	margin-bottom: 30px;
+}
+
+/* @page */
+h1{
+	margin: auto;
+	width: 930px;
+	height: 48px;
+	line-height: 48px;
+	font-size: 20px;
+	color: #727272;
+	font-family: "Microsoft YaHei";
+	letter-spacing: 1px;
+	text-align:  right;
+}
+.u-wrap{
+	margin: auto;
+	width: 920px;
+	padding: 20px;
+	background-color: #fff;
+	font-family: "Microsoft YaHei";
+	box-shadow: 0 0 5px rgba(0,0,0,0.12);
+}
+.u-wrap h2{
+	font-size: 18px;
+	color: #404040;
+}
+.u-wrap h3{
+	margin-top: 20px;
+	font-size: 16px;
+	border-bottom: solid 1px #dfdfdf;
+	color: #404040;
+	line-height: 30px;
+}
+.u-wrap .content{
+	padding: 10px;
+	line-height: 28px;
+	font-size: 14px;
+	color: #808080;
+}
+.u-wrap .content .key{
+	color: #0099ff;
+	font-family: Verdana;
+}
+.u-wrap .code{
+	padding: 10px;
+	border: dashed 1px #dfdfdf;
+	background-color: #f7f7f7;
+	line-height: 20px;
+	color: #606060;
+}
+.u-wrap .code xmp{
+	margin: 0;
+	word-wrap: break-word;
+	word-break: normal;
+	font-family: "Courier New", Courier, monospace;
+}

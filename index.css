@@ -22,6 +22,7 @@ html{
 .u-list{
 	margin: 10px auto 0;
 	width: 960px;
+	font-family: "Microsoft YaHei";
 }
 .u-list li{
 	float: left;
