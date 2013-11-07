@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="gb2312" />
+<title>KF代码库</title>
+<link rel="shortcut icon" type="image/x-icon" href="kf.ico" />
+<link rel="stylesheet" href="base-min.css" />
+<link rel="stylesheet" href="screen-min.css" />
+</head>
+<body>
+<h1>KF代码库</h1>
+<div class="u-wrap">
+	<h2>kf</h2>
+	<h3>kf.js</h3>
+	<div class="content">
+		<p>kf.js是KF代码库引入文件，引入此文件，便可以在网页中使用KF代码库里的所有组件。</p>
+		<p>需要注意的是，KF代码库组件全部寄存在全局变量kf下，故需要避免变量名kf被其他函数占用或重定义。</p>
+		<p>kf.js文件路径：</p>
+		<div class="code">
+<xmp><script src="http://kf.fwowo.com/kf.js"></script></xmp>
+		</div>
+	</div>
+	<h3>属性</h3>
+	<div class="content">
+		<p><span class="key">host</span> 组件路径，默认值：http://kf.fwowo.com/，可通过修改此属性来更改组件调用路径，常用在调试本地组件。</p>
+		<p><span class="key">debug</span> 调试模式，默认false。true时引入的是组件源文件，false时引入的是组件min文件。</p>
+		<p><span class="key">useArray</span> 查看调用过的组件，只读。</p>
+	</div>
+	<h3>方法</h3>
+	<div class="content">
+		<p><span class="key">getStyle</span> 加载引入css文件，加载成功回调callback函数。</p>
+		<p><span class="key">use</span> 引入组件，可单次引入多个组件，多个组件使用数组格式。</p>
+	</div>
+	<h3>常用代码</h3>
+	<div class="content">
+		<div class="code">
+<xmp><script src="http://kf.fwowo.com/kf.js"></script>
+<script>
+kf.getStyle('style.css', function(){
+	...
+});
+kf.use('module', function(){
+	var newModule = new kf.module();
+	...
+});
+</script></xmp>
+		</div>
+	</div>
+</div>
+</body>
+</html>
