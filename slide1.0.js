@@ -50,11 +50,11 @@ kf['slide'].prototype = {
 		if (this.config['effect'] == 'vertical') {
 			this.size = this.pannel.height();
 			this.content.height(this.size * this.pannel.length);
-			this.wrap.scrollTop(this.ilong * this.startIndex);
+			this.wrap.scrollTop(this.size * this.startIndex);
 		} else {
 			this.size = this.pannel.width();
 			this.content.width(this.size * this.pannel.length);
-			this.wrap.scrollLeft(this.ilong * this.startIndex);
+			this.wrap.scrollLeft(this.size * this.startIndex);
 		}
 		// 是否有icon
 		if (this.config['iconState']) {
@@ -137,7 +137,7 @@ kf['slide'].prototype = {
 			this.play();
 		}
 	},
-	to: function(index){
+	go: function(index){
 		if (index != this.index) {
 			this.index = index;
 			this.play();
@@ -152,7 +152,7 @@ kf['slide'].prototype = {
 		this.icon = this.iconObj.find('li');
 		this.icon.eq(0).addClass('current');
 		this.icon.on(this.config['iconEvent'], function(){
-			_this.to($(this).data('index'));
+			_this.go($(this).data('index'));
 		});
 		this.obj.append(this.iconObj);
 	}
