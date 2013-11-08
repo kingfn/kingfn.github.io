@@ -8,5 +8,5 @@ if(this.config.iconState){this.creaticon();}this.playState=false;if(this.config.
 a.css({"z-index":3,opacity:0});a.animate({opacity:1},function(){b.pannel.css("z-index",1);a.css("z-index",2);b.playState=false;});},prev:function(){if(!this.playState){this.index--;
 if(this.index<0){this.index=this.len-1;}this.play();}},next:function(){if(!this.playState){this.index++;if(this.index>=this.len){this.index=0;}this.play();
 }},go:function(b){if(b!=this.index){this.pannel.stop();var a=this.pannel.eq(this.index);a.css({"z-index":2,opacity:1});this.index=b;this.play();}},creaticon:function(){var a=this;
-this.iconObj=$('<ul class="kf-fade-icon"></ul>');for(i=0;i<this.len;i++){this.iconObj.append('<li data-index="'+i+'">'+(i+1)+"</li>");}this.icon=this.iconObj.find("li");
-this.icon.eq(0).addClass("current");this.icon.on(this.config.iconEvent,function(){a.go($(this).data("index"));});this.obj.append(this.iconObj);}};
+this.iconObj=$('<ul class="kf-fade-icon"></ul>');for(i=0;i<this.len;i++){this.iconObj.append('<li data-index="'+i+'">'+(i+1)+"</li>");}this.obj.append(this.iconObj);
+this.icon=this.iconObj.find("li");this.icon.eq(0).addClass("current");this.icon.on(this.config.iconEvent,function(){a.go($(this).data("index"));});}};

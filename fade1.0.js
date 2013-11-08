@@ -114,11 +114,12 @@ kf['fade'].prototype = {
 		for (i=0; i<this.len; i++) {
 			this.iconObj.append('<li data-index="' + i + '">' + (i+1) + '</li>');
 		}
+		// 展示再操作，否则ie下eq定位不准
+		this.obj.append(this.iconObj);
 		this.icon = this.iconObj.find('li');
 		this.icon.eq(0).addClass('current');
 		this.icon.on(this.config['iconEvent'], function(){
 			_this.go($(this).data('index'));
 		});
-		this.obj.append(this.iconObj);
 	}
 };

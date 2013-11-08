@@ -13,5 +13,5 @@ this.icon.eq(this.index).addClass("current");}if(this.config.autoPlay){clearTime
 }else{c.wrap.scrollLeft(c.size*(c.startIndex+c.index));}}});},prev:function(){if(!this.playState){this.index--;if(!this.config.autoRound&&this.index<this.startIndex){this.index=this.endIndex;
 }this.play();}},next:function(){if(!this.playState){this.index++;if(!this.config.autoRound&&this.index>this.endIndex){this.index=this.startIndex;}this.play();
 }},go:function(a){if(a!=this.index){this.index=a;this.play();}},creaticon:function(){var a=this;this.iconObj=$('<ul class="kf-slide-icon"></ul>');for(i=0;
-i<this.len;i++){this.iconObj.append('<li data-index="'+i+'">'+(i+1)+"</li>");}this.icon=this.iconObj.find("li");this.icon.eq(0).addClass("current");this.icon.on(this.config.iconEvent,function(){a.go($(this).data("index"));
-});this.obj.append(this.iconObj);}};
+i<this.len;i++){this.iconObj.append('<li data-index="'+i+'">'+(i+1)+"</li>");}this.obj.append(this.iconObj);this.icon=this.iconObj.find("li");this.icon.eq(0).addClass("current");
+this.icon.on(this.config.iconEvent,function(){a.go($(this).data("index"));});}};
