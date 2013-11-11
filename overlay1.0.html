@@ -10,103 +10,86 @@
 <body>
 <h1>KF代码库</h1>
 <div class="u-wrap">
-	<h2>slide1.0</h2>
+	<h2>overlay1.0</h2>
 	<h3>代码</h3>
 	<div class="content">
 		<div class="code">
-<xmp>kf.use('slide1.0', function(){
-	var slide = new kf.slide(Obj, Params);
+<xmp>kf.use('overlay1.0', function(){
+	var overlay = new kf.overlay(Params);
 });</xmp>
 		</div>
 	</div>
-	<h3>Obj</h3>
-	<div class="content">
-		<span class="key">Obj</span> 滑动模块内容的容器，值为object或id
-	</div>
-	<h3>约定</h3>
-	<div class="content">
-		<p><span class="key">Obj</span> 内元素约定：</p>
-		<p><span class="key">.kf-slide-wrap</span> 该元素为滚动元素容器，必选。</p>
-		<p><span class="key">.kf-slide-content</span> 该元素为滚动元素内容，可选，若不存在则获取 <span class="key">.kf-slide-wrap</span> 元素下 ul 元素</p>
-		<p><span class="key">.kf-slide-pannel</span> 该元素为单个滚动元素内容，可选，若不存在则获取 <span class="key">.kf-slide-wrap</span> 元素下 li 元素</p>
-	</div>
 	<h3>Params</h3>
 	<div class="content">
-		<p><span class="key">effect</span> 切换效果，可选值：horizontal(横向滚动)、vertical(纵向滚动)，默认值 horizontal</p>
-		<p><span class="key">autoPlay</span> 是否自动播放，默认值 true</p>
-		<p><span class="key">autoTime</span> 自动切换时间差，单位毫秒，默认值 5000</p>
-		<p><span class="key">autoRound</span> 是否循环，默认值 true</p>
-		<p><span class="key">iconState</span> 是否展示小图标，默认值 true，为 true 时，脚本会在 <span class="key">.kf-slide-wrap</span> 内自动创建类似以下元素</p>
-		<div class="code">
-<xmp><ul class="kf-slide-icon">
-	<li data-index="0" class="current">1</li>
-	<li data-index="1">2</li>
-	<li data-index="2">3</li>
-</ul></xmp>
-		</div>
-		<p><span class="key">iconEvent</span> 小图标触发事件，可选值：mouseover、click，默认值 mouseover</p>
+		<p><span class="key">width</span> 弹出框宽度，默认 auto</p>
+		<p><span class="key">height</span> 弹出框高度，默认 auto</p>
+		<p><span class="key">close</span> 弹出框关闭按钮，若不存在，默认值 .kf-overlay-close</p>
+		<p><span class="key">mask</span> 是否有蒙版，默认值 true</p>
+		<p><span class="key">maskClose</span> 蒙版是否可点击关闭弹出框，默认值 true</p>
+		<p><span class="key">content</span> 弹出框内容，若存在，则会触发 <span class="key">show(content)</span></p>
 	</div>
 	<h3>方法</h3>
 	<div class="content">
-		<p><span class="key">prev</span> 向前滑动一单位元素</p>
-		<p><span class="key">next</span> 向后滑动一单位元素</p>
-		<p><span class="key">go(index)</span> 滑动至指定序号元素</p>
+		<p><span class="key">show(content)</span> 显示内容，若<span class="key">content</span>为空，则显示目前弹出框中的内容</p>
+		<p><span class="key">hide</span> 隐藏弹出框</p>
 	</div>
 	<h3>Demo</h3>
 	<div class="content">
 		<!-- demo start -->
 		<style>
-		#kf-slide{
+		.overlay{
+			width: 765px;
+		}
+		.overlay .header{
 			position: relative;
-			width: 755px;
+			height: 30px;
+			line-height: 30px;
+			background: #000;
+			color: #fff;
+			font-family: "Microsoft YaHei";
+			padding: 0 10px;
+			font-size: 14px;
+		}
+		.overlay .main{
 			height: 260px;
-			overflow: hidden;
+			padding: 5px;
+			background: #f0f0f0;
 		}
-		.kf-slide-wrap, .kf-slide-wrap li{
-			width: 755px;
-			height: 260px;
-			overflow: hidden;
+		.overlay .main img{
+			display: block;
 		}
-		.kf-slide-wrap li{
-			float: left;
-		}
-		.kf-slide-icon{
+		.overlay .kf-overlay-close{
 			position: absolute;
-			left: 6px;
-			bottom: 4px;
-			z-index: 9;
-		}
-		.kf-slide-icon li{
-			float: left;
-			margin-right: 6px;
-			width: 10px;
-			height: 10px;
-			border-radius: 50%;
-			background-color: #333;
-			text-indent: -99px;
-			overflow: hidden;
-		}
-		.kf-slide-icon li.current{
-			background-color: #f60;
+			width: 16px;
+			height: 16px;
+			text-align: center;
+			line-height: 16px;
+			right: 7px;
+			top: 7px;
+			color: #fff;
+			cursor: pointer;
+			font-family: Verdana;
+			font-size: 14px;
 		}
 		</style>
-		<div id="kf-slide">
-			<div class="kf-slide-wrap">
-				<ul>
-					<li><img src="http://img04.taobaocdn.com/tps/i4/T1gaCSXvNdXXbByyEK-755-260.jpg"></li>
-					<li><img src="http://img04.taobaocdn.com/tps/i4/T1tr1UXAlbXXbByyEK-755-260.jpg"></li>
-					<li><img src="http://img02.taobaocdn.com/tps/i2/T1vgSOXzVfXXbByyEK-755-260.jpg"></li>
-					<li><img src="http://img03.taobaocdn.com/tps/i3/T1QFuSXxVgXXbByyEK-755-260.jpg"></li>
-				</ul>
+		<div id="kf-overlay">
+			<div class="overlay">
+				<div class="header">
+					弹出框内容
+					<span class="kf-overlay-close">X</span>
+				</div>
+				<div class="main"><img src="http://img03.taobaocdn.com/tps/i3/T1QFuSXxVgXXbByyEK-755-260.jpg"></div>
 			</div>
 		</div>
 		<script src="kf.js"></script>
 		<script>
-		kf['host'] = 'http://f.com/github/kingfn.github.io/';
-		kf['debug'] = true;
 		kf.use('overlay1.0', function(){
-			var overlay = new kf.overlay();
-			overlay.show('<div><img src="http://img04.taobaocdn.com/tps/i4/T1gaCSXvNdXXbByyEK-755-260.jpg"></div>');
+			var overlay = new kf.overlay({
+				content: $('#kf-overlay').html()
+			});
+			$('#kf-overlay').click(function(){
+				overlay.show();
+			});
 		});
 		</script>
 		<!-- demo end -->
@@ -114,20 +97,24 @@
 	<h3>Demo代码</h3>
 	<div class="content">
 		<div class="code">
-<xmp><div id="kf-slide">
-	<div class="kf-slide-wrap">
-		<ul>
-			<li><img src="http://img04.taobaocdn.com/tps/i4/T1gaCSXvNdXXbByyEK-755-260.jpg"></li>
-			<li><img src="http://img04.taobaocdn.com/tps/i4/T1tr1UXAlbXXbByyEK-755-260.jpg"></li>
-			<li><img src="http://img02.taobaocdn.com/tps/i2/T1vgSOXzVfXXbByyEK-755-260.jpg"></li>
-			<li><img src="http://img03.taobaocdn.com/tps/i3/T1QFuSXxVgXXbByyEK-755-260.jpg"></li>
-		</ul>
+<xmp><div id="kf-overlay">
+	<div class="overlay">
+		<div class="header">
+			弹出框内容
+			<span class="kf-overlay-close">X</span>
+		</div>
+		<div class="main"><img src="http://img03.taobaocdn.com/tps/i3/T1QFuSXxVgXXbByyEK-755-260.jpg"></div>
 	</div>
 </div>
 <script src="http://kf.fwowo.com/kf.js"></script>
 <script>
-kf.use('slide1.0', function(){
-	var slide = new kf.slide('kf-slide');
+kf.use('overlay1.0', function(){
+	var overlay = new kf.overlay({
+		content: $('#kf-overlay').html()
+	});
+	$('#kf-overlay').click(function(){
+		overlay.show();
+	});
 });
 </script></xmp>
 		</div>

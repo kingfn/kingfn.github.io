@@ -56,7 +56,7 @@ kf['overlay'].prototype = {
 			if (typeof(this.config['close']) == 'object') {
 				var closeBtn = this.config['close'];
 			} else {
-				var closeBtn = this.overlay.find(this.config['.close']);
+				var closeBtn = this.overlay.find(this.config['close']);
 			}
 			closeBtn.click(function(){
 				_this.hide();
