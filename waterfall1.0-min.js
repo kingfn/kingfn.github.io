@@ -4,7 +4,7 @@ kf.waterfall=function(b,a){if(typeof(b)=="object"){this.obj=b;}else{this.obj=$("
 this.obj.find("textarea").remove();}else{this.model="";}}if(this.column.length>1){this.init();}};kf.waterfall.prototype={init:function(){if(this.config.data){this.show(this.config.data);
 }},show:function(a){this.data=a;this.dataLen=this.data.length;this.rankShow(0);},rankShow:function(b){var g=this;if(b<this.dataLen){var e=this.data[b];
 var c=this.model;$.each(e,function(h,i){var j=new RegExp("{#"+h+"}","g");c=c.replace(j,i);});var a=$(c);if(a.find("img.loadimg").length>0){var f=a.find("img.loadimg").attr("src");
-var d=new Image();d.src=f;if(d.complete){setTimeout(function(){g.showin(a);g.rankShow(b+1);},100);}else{d.onload=function(){g.showin(a);g.rankShow(b+1);
-};d.onerror=function(){g.showin(a);g.rankShow(b+1);};}}else{this.showin(a);this.rankShow(b+1);}}else{if(this.config.callback){this.config.callback();}}},showin:function(a){a.css("display","none");
-this.minCol().append(a);a.fadeIn("fast");},minCol:function(){var b=this.column.eq(0);var a=b.height();$.each(this.column,function(c){if(c>0){if($(this).height()<a){a=$(this).height();
+var d=new Image();d.src=f;if(d.complete){setTimeout(function(){g.showin(a);g.rankShow(b+1);},100);}else{d.onload=function(){setTimeout(function(){g.showin(a);
+g.rankShow(b+1);},100);};d.onerror=function(){g.showin(a);g.rankShow(b+1);};}}else{this.showin(a);this.rankShow(b+1);}}else{if(this.config.callback){this.config.callback();
+}}},showin:function(a){a.css("display","none");this.minCol().append(a);a.fadeIn("fast");},minCol:function(){var b=this.column.eq(0);var a=b.height();$.each(this.column,function(c){if(c>0){if($(this).height()<a){a=$(this).height();
 b=$(this);}}});return b;}};

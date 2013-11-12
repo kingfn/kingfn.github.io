@@ -73,8 +73,10 @@ kf['waterfall'].prototype = {
 					}, 100);
 				} else {
 					newImg.onload = function(){
-						_this.showin(newObj);
-						_this.rankShow(index + 1);
+						setTimeout(function(){
+							_this.showin(newObj);
+							_this.rankShow(index + 1);
+						}, 100);
 					};
 					newImg.onerror = function(){
 						_this.showin(newObj);
