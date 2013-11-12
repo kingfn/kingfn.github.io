@@ -84,8 +84,10 @@ kf['waterfall'].prototype = {
 					};
 				}
 			} else {
-				this.showin(newObj);
-				this.rankShow(index + 1);
+				setTimeout(function(){
+					_this.showin(newObj);
+					_this.rankShow(index + 1);
+				}, 100);
 			}
 		} else {
 			if (this.config['callback']) {
