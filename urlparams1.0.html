@@ -45,30 +45,14 @@
 	<h3>Demo´úÂë</h3>
 	<div class="content">
 		<div class="code">
-<xmp><div id="kf-tab">
-	<div class="kf-tab-head">
-		<ul class="fn-clear">
-			<li>option 1</li>
-			<li>option 2</li>
-			<li>option 3</li>
-		</ul>
-	</div>
-	<ul class="kf-tab-body">
-		<li>pannel 1</li>
-		<li>pannel 2</li>
-		<li>pannel 3</li>
-	</ul>
+<xmp><div id="kf-urlparams">
+	id = '<em></em>'
 </div>
 <script src="http://kf.fwowo.com/kf.js"></script>
 <script>
-kf.use('tab1.0', function(){
-	var tab = new kf.tab('kf-tab', {
-		option: '.kf-tab-head li',
-		pannel: '.kf-tab-body li',
-		callback: function(index){
-			// console.log(index);
-		}
-	});
+kf.use('urlparams1.0', function(){
+	var urlparams = new kf.urlparams('?id=99');
+	$('#kf-urlparams em').html(urlparams.data['id']);
 });
 </script></xmp>
 		</div>
