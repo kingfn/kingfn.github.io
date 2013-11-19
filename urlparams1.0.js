@@ -1,6 +1,6 @@
 kf['urlparams'] = function(url){
 	if (url) {
-		this.data = this.init();
+		this.data = this.init(url);
 	}
 };
 kf['urlparams'].prototype = {
