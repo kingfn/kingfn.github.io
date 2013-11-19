@@ -1,4 +1,4 @@
-kf['urlparams'] = function(){
+kf['urlparams'] = function(url){
 	if (url) {
 		this.data = this.init();
 	}
