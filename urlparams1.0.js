@@ -1,12 +1,22 @@
-kf['urlparams'] = {};
-(function(){
-	var kfSearch = document.location.search;
-	if (kfSearch != '') {
-		kfSearch = kfSearch.substr(1);
-		kfSearchSplit = kfSearch.split('&');
-		$.each(kfSearchSplit, function(){
-			var item = this.split('=');
-			kf['urlparams'][item[0]] = item[1];
-		});
+kf['urlparams'] = function(){
+	if (url) {
+		this.data = this.init();
 	}
-})();
+};
+kf['urlparams'].prototype = {
+	init: function(url) {
+		var data = {};
+		if (url.indexOf('?') > -1) {
+			url = url.split('?')[1];
+			if (url.indexOf('#') > -1) {
+				url = url.split('#')[0];
+			}
+		}
+		kfUrl = url.split('&');
+		$.each(kfUrl, function(){
+			var item = this.split('=');
+			data[item[0]] = item[1];
+		});
+		return data;
+	}
+};

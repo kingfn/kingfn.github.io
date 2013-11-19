@@ -1,2 +1,2 @@
-kf.urlparams={};(function(){var a=document.location.search;if(a!=""){a=a.substr(1);kfSearchSplit=a.split("&");$.each(kfSearchSplit,function(){var b=this.split("=");
-kf.urlparams[b[0]]=b[1];});}})();
+kf.urlparams=function(){if(url){this.data=this.init();}};kf.urlparams.prototype={init:function(a){var b={};if(a.indexOf("?")>-1){a=a.split("?")[1];if(a.indexOf("#")>-1){a=a.split("#")[0];
+}}kfUrl=a.split("&");$.each(kfUrl,function(){var c=this.split("=");b[c[0]]=c[1];});return b;}};
