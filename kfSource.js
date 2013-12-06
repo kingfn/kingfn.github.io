@@ -36,11 +36,15 @@ kf['use'] = function(list, callback, errcallback) {
 		var fns = list;
 	}
 	$.each(fns, function() {
-		var item = this;
+		if (this.indexOf('#') == 0) {
+			var url = this.substr(1) + min;
+		} else {
+			var url = kf['host'] + item + min;
+		}
 		if ($.inArray(item, kf['useArray']) < 0) {
 			fn.push($.ajax({
 				type: "GET",
-				url: kf['host'] + item + min,
+				url: url,
 				dataType: "script",
 				scriptCharset: "UTF-8",
 				cache: true
