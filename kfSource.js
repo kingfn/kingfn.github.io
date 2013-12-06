@@ -39,9 +39,9 @@ kf['use'] = function(list, callback, errcallback) {
 		if (this.indexOf('#') == 0) {
 			var url = this.substr(1) + min;
 		} else {
-			var url = kf['host'] + item + min;
+			var url = kf['host'] + this + min;
 		}
-		if ($.inArray(item, kf['useArray']) < 0) {
+		if ($.inArray(this, kf['useArray']) < 0) {
 			fn.push($.ajax({
 				type: "GET",
 				url: url,
