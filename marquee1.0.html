@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="gb2312" />
+<title>KF代码库</title>
+<link rel="shortcut icon" type="image/x-icon" href="kf.ico" />
+<link rel="stylesheet" href="base-min.css" />
+<link rel="stylesheet" href="screen-min.css" />
+</head>
+<body>
+<h1>KF代码库</h1>
+<div class="u-wrap">
+	<h2>marquee1.0</h2>
+	<h3>代码</h3>
+	<div class="content">
+		<div class="code">
+<xmp>kf.use('marquee1.0', function(){
+	var marquee = new kf.marquee(Obj, Params);
+});</xmp>
+		</div>
+	</div>
+	<h3>Obj</h3>
+	<div class="content">
+		<span class="key">Obj</span> 滚动模块内容的容器，值为object或id
+	</div>
+	<h3>约定</h3>
+	<div class="content">
+		<p><span class="key">Obj</span> 内元素约定：</p>
+		<p><span class="key">.kf-marquee-wrap</span> 该元素为滚动元素容器，必选。</p>
+		<p><span class="key">.kf-marquee-content</span>该元素为滚动元素内容，可选，若不存在则获取 <span class="key">.kf-marquee-wrap</span> 元素下 ul 元素</p>
+		<p><span class="key">.kf-marquee-pannel</span> 该元素为单个滚动元素内容，可选，若不存在则获取 <span class="key">.kf-marquee-wrap</span> 元素下 li 元素</p>
+	</div>
+	<h3>Params</h3>
+	<div class="content">
+		<p><span class="key">effect</span> 切换效果，可选值：horizontal(横向滚动)、vertical(纵向滚动)，默认值 horizontal</p>
+		<p><span class="key">overStop</span> 经过时是否暂停，默认值 true</p>
+	</div>
+	<h3>Demo</h3>
+	<div class="content">
+		<!-- demo start -->
+		<style>
+		.kf-marquee{
+			width: 900px;
+			height: 260px;
+			overflow: hidden;
+		}
+		.kf-marquee ul{
+			float: left;
+			height: 260px;
+			overflow: hidden;
+		}
+		.kf-marquee li{
+			float: left;
+			padding-right: 10px;
+		}
+		</style>
+		<div id="kf-marquee" class="kf-marquee">
+			<div class="kf-marquee-wrap">
+				<ul>
+					<li><img src="http://img04.taobaocdn.com/tps/i4/T1gaCSXvNdXXbByyEK-755-260.jpg"></li>
+					<li><img src="http://img04.taobaocdn.com/tps/i4/T1tr1UXAlbXXbByyEK-755-260.jpg"></li>
+					<li><img src="http://img02.taobaocdn.com/tps/i2/T1vgSOXzVfXXbByyEK-755-260.jpg"></li>
+					<li><img src="http://img03.taobaocdn.com/tps/i3/T1QFuSXxVgXXbByyEK-755-260.jpg"></li>
+				</ul>
+			</div>
+		</div>
+		<script src="kf.js"></script>
+		<script>
+		kf.use('marquee1.0', function(){
+			var marquee = new kf.marquee('kf-marquee');
+		});
+		</script>
+		<!-- demo end -->
+	</div>
+	<h3>Demo代码</h3>
+	<div class="content">
+		<div class="code">
+<xmp><div id="kf-marquee" class="kf-marquee">
+	<div class="kf-marquee-wrap">
+		<ul>
+			<li><img src="http://img04.taobaocdn.com/tps/i4/T1gaCSXvNdXXbByyEK-755-260.jpg"></li>
+			<li><img src="http://img04.taobaocdn.com/tps/i4/T1tr1UXAlbXXbByyEK-755-260.jpg"></li>
+			<li><img src="http://img02.taobaocdn.com/tps/i2/T1vgSOXzVfXXbByyEK-755-260.jpg"></li>
+			<li><img src="http://img03.taobaocdn.com/tps/i3/T1QFuSXxVgXXbByyEK-755-260.jpg"></li>
+		</ul>
+	</div>
+</div>
+<script src="http://kf.fwowo.com/kf.js"></script>
+<script>
+kf.use('marquee1.0', function(){
+	var marquee = new kf.marquee('kf-marquee');
+});
+</script></xmp>
+		</div>
+	</div>
+</div>
+</body>
+</html>
