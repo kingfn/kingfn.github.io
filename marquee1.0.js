@@ -35,7 +35,8 @@ kf['marquee'].prototype = {
 		this.doSize();
 		if (this.pannel.find('img').length) {
 			this.pannel.find('img').each(function(){
-				if (this.complete) {
+				var newImg = this;
+				if (newImg.complete) {
 					_this.doSize();
 				} else {
 					newImg.onload = function(){
